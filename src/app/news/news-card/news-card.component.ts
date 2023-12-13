@@ -1,19 +1,7 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  WritableSignal,
-  signal,
-} from '@angular/core';
-import { News } from '../../models';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
-import { CommonModule } from '@angular/common';
+import {Component, Input, OnInit, signal, WritableSignal,} from '@angular/core';
+import {News} from '../../models';
+import {animate, state, style, transition, trigger,} from '@angular/animations';
+import {CommonModule} from '@angular/common';
 
 export enum CardState {
   default = 'default',
@@ -100,7 +88,7 @@ export class NewsCardComponent implements OnInit {
     }
   }
 
-  setCardState(state: CardState, content: string | number): void {
+  private setCardState(state: CardState, content: string | number): void {
     this.cardState = state;
     this.content.set(content);
   }
