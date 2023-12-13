@@ -1,0 +1,8 @@
+<div class="grid lg:grid-cols-10 md:grid-cols-5 grid-cols-2 gap-2 p-2">
+  <app-news-card
+    *ngFor="let news of news$ | async"
+    (click)="selectedNews = news"
+    [news]="news"
+    [isSelected]="news.id === selectedNews?.id"
+  ></app-news-card>
+</div>

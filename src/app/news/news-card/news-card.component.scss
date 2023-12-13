@@ -1,0 +1,30 @@
+.news-card {
+  transform: rotateX(0) rotateY(0);
+  transform-style: preserve-3d;
+
+  .news-card__content {
+    @apply w-full h-full left-0 top-0 backface-hidden;
+  }
+
+  &--first-click {
+    @apply bg-yellow-300;
+
+    .news-card__content {
+      transform: rotateX(0) rotateY(-180deg);
+    }
+  }
+  &--second-click {
+    @apply bg-purple-300;
+
+    .news-card__content {
+      transform: rotateX(-180deg) rotateY(-180deg);
+    }
+  }
+  &--last-click {
+    @apply bg-blue-300;
+
+    .news-card__content {
+      transform: rotateX(-180deg) rotateY(0);
+    }
+  }
+}
