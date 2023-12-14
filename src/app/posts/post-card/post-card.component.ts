@@ -1,9 +1,9 @@
 import {Component, Input, OnInit, signal, WritableSignal,} from '@angular/core';
-import {News} from '../../models';
+import {Post} from '../../models';
 import {animate, state, style, transition, trigger,} from '@angular/animations';
 import {CommonModule} from '@angular/common';
 
-export enum CardState {
+export enum State {
   default = 'default',
   firstClick = 'firstClick',
   secondClick = 'secondClick',
@@ -11,11 +11,11 @@ export enum CardState {
 }
 
 @Component({
-  selector: 'app-news-card',
+  selector: 'app-post-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './news-card.component.html',
-  styleUrl: './news-card.component.scss',
+  templateUrl: './post-card.component.html',
+  styleUrl: './post-card.component.scss',
   animations: [
     trigger('flip', [
       state(
@@ -51,44 +51,44 @@ export enum CardState {
     ]),
   ],
 })
-export class NewsCardComponent implements OnInit {
-  @Input({ required: true }) news!: News;
+export class PostCardComponent implements OnInit {
+  @Input({ required: true }) post!: Post;
   @Input() set isSelected(isSelected: boolean) {
-    if (!isSelected && this.cardState !== CardState.default) {
-      this.setCardState(CardState.default, this.news.title);
+    if (!isSelected && this.cardState !== State.default) {
+      this.setState(State.default, this.post.title);
     }
   }
 
-  cardState: CardState = CardState.default;
+  cardState: State = State.default;
   content: WritableSignal<string | number> = signal('');
 
-  protected readonly CardState = CardState;
+  protected readonly CardState = State;
 
   ngOnInit(): void {
-    this.setCardState(CardState.default, this.news.title);
+    this.setState(State.default, this.post.title);
   }
 
-  onCardClick() {
+  onClick() {
     switch (this.cardState) {
-      case CardState.default:
-        this.setCardState(CardState.firstClick, this.news.userId);
+      case State.default:
+        this.setState(State.firstClick, this.post.userId);
         break;
-      case CardState.firstClick:
-        this.setCardState(CardState.secondClick, this.news.id);
+      case State.firstClick:
+        this.setState(State.secondClick, this.post.id);
         break;
-      case CardState.secondClick:
-        this.setCardState(CardState.lastClick, this.news.body);
+      case State.secondClick:
+        this.setState(State.lastClick, this.post.body);
         break;
-      case CardState.lastClick:
-        this.setCardState(CardState.default, this.news.title);
+      case State.lastClick:
+        this.setState(State.default, this.post.title);
         break;
       default:
-        this.setCardState(CardState.default, this.news.title);
+        this.setState(State.default, this.post.title);
         break;
     }
   }
 
-  private setCardState(state: CardState, content: string | number): void {
+  private setState(state: State, content: string | number): void {
     this.cardState = state;
     this.content.set(content);
   }

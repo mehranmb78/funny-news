@@ -1,1 +1,1 @@
-export * from './news/news.model';
+export * from './post/post.model';
