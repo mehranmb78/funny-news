@@ -1,11 +1,11 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {PostsComponent} from './posts.component';
-import {PostService} from "./services/post.service";
-import {of} from "rxjs";
-import {Post} from "../models";
-import {Component, Input} from "@angular/core";
-import {PostCardComponent} from "./post-card/post-card.component";
+import { CardsComponent } from './cards.component';
+import { CardService } from "./services/card.service";
+import { of } from "rxjs";
+import { Card } from "../models";
+import { Component, Input } from "@angular/core";
+import { CardComponent } from "./card/card.component";
 
 
 @Component({
@@ -15,14 +15,14 @@ import {PostCardComponent} from "./post-card/post-card.component";
   template: ''
 })
 export class PostCardMockComponent {
-  @Input() post!: Post
+  @Input() post!: Card
   @Input() isSelected?: boolean
 }
 
 describe('PostsComponent', () => {
-  let component: PostsComponent;
-  let fixture: ComponentFixture<PostsComponent>;
-  const postsMock: Post[] = [
+  let component: CardsComponent;
+  let fixture: ComponentFixture<CardsComponent>;
+  const postsMock: Card[] = [
     {
       body: 'testBody',
       title: 'testTitle',
@@ -45,22 +45,22 @@ describe('PostsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostsComponent],
+      imports: [CardsComponent],
       providers: [
         {
-          provide: PostService,
+          provide: CardService,
           useValue: {
             getPosts: () => of(postsMock)
           }
         }
       ]
-    }).overrideComponent(PostsComponent, {
-      remove: {imports: [PostCardComponent]},
-      add: {imports: [PostCardMockComponent]}
+    }).overrideComponent(CardsComponent, {
+      remove: { imports: [CardComponent] },
+      add: { imports: [PostCardMockComponent] }
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(PostsComponent);
+    fixture = TestBed.createComponent(CardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

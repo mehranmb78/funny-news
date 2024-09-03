@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from '../../models';
+import { Card } from '../../models';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PostService {
+export class CardService {
   apiUrl = 'https://jsonplaceholder.typicode.com';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.apiUrl}/posts`);
+  getPosts(): Observable<Card[]> {
+    return this.http.get<Card[]>(`${this.apiUrl}/posts`);
   }
 }

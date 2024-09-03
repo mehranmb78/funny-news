@@ -1,15 +1,15 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from "@angular/platform-browser";
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {DebugElement} from "@angular/core";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from "@angular/platform-browser";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { DebugElement } from "@angular/core";
 
-import {State, PostCardComponent} from './post-card.component';
-import {Post} from "../../models";
+import { State, CardComponent } from './card.component';
+import { Card } from "../../models";
 
 describe('PostCardComponent', () => {
-  let component: PostCardComponent;
-  let fixture: ComponentFixture<PostCardComponent>;
-  let postMock: Post = {
+  let component: CardComponent;
+  let fixture: ComponentFixture<CardComponent>;
+  let postMock: Card = {
     body: 'testBody',
     title: 'testTitle',
     userId: 22,
@@ -19,11 +19,11 @@ describe('PostCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostCardComponent, NoopAnimationsModule],
+      imports: [CardComponent, NoopAnimationsModule],
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(PostCardComponent);
+    fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
     postCardElement = fixture.debugElement.query(By.css('div'));
     component.post = postMock
@@ -98,6 +98,6 @@ describe('PostCardComponent', () => {
     component.isSelected = false
 
     expect(component.content()).toBe(postMock.title)
-    expect(component.cardState).toBe(State.default)
+    expect(component.cardState).toBe(State.Title)
   })
 });

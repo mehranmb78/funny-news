@@ -1,8 +1,0 @@
-<div class="grid lg:grid-cols-10 md:grid-cols-5 grid-cols-2 gap-2 p-2">
-  <app-post-card
-    *ngFor="let post of posts$ | async"
-    (click)="selectedPost = post"
-    [post]="post"
-    [isSelected]="post.id === selectedPost?.id"
-  ></app-post-card>
-</div>

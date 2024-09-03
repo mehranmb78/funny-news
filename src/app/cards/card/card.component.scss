@@ -7,25 +7,11 @@
     @apply w-full h-full left-0 top-0 backface-hidden;
   }
 
-  &--first-click {
+  &--description {
     @apply bg-green-200;
 
     .post-card__content {
       transform: rotateX(0) rotateY(-180deg);
-    }
-  }
-  &--second-click {
-    @apply bg-orange-200;
-
-    .post-card__content {
-      transform: rotateX(-180deg) rotateY(-180deg);
-    }
-  }
-  &--last-click {
-    @apply bg-pink-200;
-
-    .post-card__content {
-      transform: rotateX(-180deg) rotateY(0);
     }
   }
 }

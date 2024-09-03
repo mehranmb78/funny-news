@@ -1,7 +1,15 @@
 import { Routes } from '@angular/router';
-import { PostsComponent } from './posts/posts.component';
+import { CardsComponent } from './cards/cards.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  { path: '', component: PostsComponent, pathMatch: 'full' },
-  { path: '**', redirectTo: '/' },
+  // {
+  // component: AppComponent,
+  // path: '',
+  // children: [
+  { path: '', component: CardsComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '/' }
+  //   ]
+  // }
+  // ,
 ];

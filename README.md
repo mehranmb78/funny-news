@@ -1,4 +1,4 @@
-# Sticky Posts
+# Sticky Cards
 
 This project was generated with Angular version 17.0.6. and I try to use [100 posts](https://jsonplaceholder.typicode.com/posts) free api and present them as 100 square in 10 * 10 layout.
 Which by click on each of them you can see an animation to show you the new content it can be helpfully when want to have flip card to see back side of it
