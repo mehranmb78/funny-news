@@ -5,7 +5,7 @@ import { CardService } from "./services/card.service";
 import { of } from "rxjs";
 import { Card } from "../models";
 import { Component, Input } from "@angular/core";
-import { CardComponent } from "./card/card.component";
+import { CardComponent } from "../components/card/card.component";
 
 
 @Component({
@@ -26,20 +26,17 @@ describe('PostsComponent', () => {
     {
       body: 'testBody',
       title: 'testTitle',
-      userId: 22,
-      id: 11
+      id: '11'
     },
     {
       body: 'testBody2',
       title: 'testTitle2',
-      userId: 33,
-      id: 22
+      id: '22'
     },
     {
       body: 'testBody3',
       title: 'testTitle3',
-      userId: 44,
-      id: 33
+      id: '33'
     },
   ]
 

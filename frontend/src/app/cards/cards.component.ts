@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Card } from '../models';
 import { CardService } from './services/card.service';
-import { CardComponent } from "./card/card.component";
+import { CardComponent } from "../components/card/card.component";
 
 @Component({
   selector: 'app-posts',
