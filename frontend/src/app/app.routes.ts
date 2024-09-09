@@ -8,7 +8,7 @@ export const routes: Routes = [
   // path: '',
   // children: [
   { path: '', component: CardsComponent, pathMatch: 'full' },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/' },
   //   ]
   // }
   // ,

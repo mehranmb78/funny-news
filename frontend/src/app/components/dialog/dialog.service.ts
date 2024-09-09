@@ -5,18 +5,17 @@ import { ComponentType } from '@angular/cdk/portal';
 import { DialogData } from './dialog.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
-
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
   open(content: ComponentType<unknown>): MatDialogRef<DialogComponent> {
     return this.dialog.open(DialogComponent, {
       data: {
-        content
+        content,
       },
       width: '750px',
-    })
+    });
   }
 }

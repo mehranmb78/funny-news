@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 const backfaceVisibility = plugin(function ({ addUtilities }) {
   addUtilities({
@@ -7,18 +7,15 @@ const backfaceVisibility = plugin(function ({ addUtilities }) {
     },
     '.backface-hidden': {
       'backface-visibility': 'hidden',
-    }
-  })
+    },
+  });
 });
 
 module.exports = {
   important: true,
-  content: [
-    "./src/**/*.{html,ts}",
-  ],
+  content: ['./src/**/*.{html,ts}'],
   theme: {
     extend: {},
   },
   plugins: [backfaceVisibility],
-}
-
+};

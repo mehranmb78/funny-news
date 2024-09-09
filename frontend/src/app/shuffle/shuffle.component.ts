@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './shuffle.component.html',
-  styleUrl: './shuffle.component.scss'
+  styleUrl: './shuffle.component.scss',
 })
-export class ShuffleComponent {
-
-}
+export class ShuffleComponent {}

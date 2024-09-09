@@ -1,11 +1,23 @@
-import { animate, state, style, transition, trigger, } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, signal, WritableSignal, } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { Card } from '../../models';
 
 export enum State {
   Title = 'Title',
-  Description = 'Description'
+  Description = 'Description',
 }
 
 @Component({

@@ -8,10 +8,9 @@ describe('ShuffleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShuffleComponent]
-    })
-    .compileComponents();
-    
+      imports: [ShuffleComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ShuffleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
